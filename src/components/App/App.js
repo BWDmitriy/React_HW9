@@ -26,9 +26,6 @@ const NavBar = () => {
       <li>
         <Link to="/nameform">NameForm</Link>
       </li>
-      <li>
-        <Link to="/calculator">Calculator</Link>
-      </li>
       {CalcRoutes.map(route => {
         return <li key={route.id}>
           <NavLink to={`/calculator/${route.id}`}>
@@ -52,11 +49,9 @@ function App() {
 
       <Router>
         <NavBar />
-        <Switch>
-          
+        <Switch>  
       <Route path="/" exact component={Home} />
           <Route path="/nameform" component={NameForm} />
-          <Route path="/calculator" exact component={Calculator} />
           <Route path="/calculator/:id" render={(props) => {
             return <ErrorBoundary><CalcOpts {...props} /></ErrorBoundary>
           }} />
