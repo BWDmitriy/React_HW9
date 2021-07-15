@@ -7,6 +7,9 @@ import ErrorBoundary from '../ErrorBoundary';
 const Home = () => {
   return <h1>Main page</h1>
 }
+const ErrorPage = () => {
+  return <h1>This page doesn't exist.</h1>
+}
 const CalcRoutes = [
   {
     id: '1',
@@ -55,7 +58,7 @@ function App() {
           <Route path="/calculator/:id" render={(props) => {
             return <ErrorBoundary><CalcOpts {...props} /></ErrorBoundary>
           }} />
-
+        <Route path="/" component={ErrorPage} />
         </Switch>
 
       </Router>
